@@ -1,4 +1,4 @@
-from pygame.locals import *
+from pygame.locals import * # type: ignore
 import pygame
 
 
