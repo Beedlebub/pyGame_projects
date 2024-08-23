@@ -9,11 +9,13 @@ import random
 # General setup
 pygame.init()
 clock = pygame.time.Clock()
+
 # Set up Main Screen display surface
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Pong')
+
 # Ball
 ball_width = 20
 ball_height = 20
@@ -21,6 +23,7 @@ ball = pygame.Rect(SCREEN_WIDTH / 2 - ball_width / 2,
                    SCREEN_HEIGHT / 2 - ball_height / 2, ball_width, ball_height)
 ball_speed_x = 7 * random.choice((1, -1))
 ball_speed_y = 7 * random.choice((1, -1))
+
 # Player
 player_width = 10
 player_height = 100
@@ -28,19 +31,23 @@ player = pygame.Rect(SCREEN_WIDTH - (player_width + 10), SCREEN_HEIGHT / 2 -
                      player_height / 2, player_width, player_height)
 player_current_speed = 0
 player_speed = 7
+
 # Opponent
 opponent_width = 10
 opponent_height = 100
 opponent = pygame.Rect(10, SCREEN_HEIGHT / 2 - opponent_height /
                        2, opponent_width, opponent_height)
 opponent_speed = 5
+
 # Colors
 bg_color = pygame.Color('grey12')
 light_grey = (200, 200, 200)
+
 # Text
 player_score = 0
 opponent_score = 0
 game_font = pygame.font.Font('freesansbold.ttf', 32)
+
 # Score timer
 score_time = True
 current_time = None
@@ -68,7 +75,7 @@ def ball_control():
 def ball_restart():
     global ball_speed_x, ball_speed_y, current_time, score_time
     current_time = pygame.time.get_ticks()
-    ball.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    ball.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2) # type: ignore
     if current_time - score_time < 700:
         number_three = game_font.render('3', False, light_grey)
         screen.blit(number_three, (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 20))
