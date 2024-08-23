@@ -1,7 +1,7 @@
 import random
 import sys
 import pygame
-from pygame.locals import *
+from pygame.locals import * # type: ignore
 
 pygame.init()
 
