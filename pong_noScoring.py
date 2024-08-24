@@ -56,7 +56,7 @@ def ball_control():
 
 def ball_restart():
     global ball_speed_x, ball_speed_y
-    ball.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    ball.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2) # type: ignore
     ball_speed_x *= random.choice((1, -1))
     ball_speed_y *= random.choice((1, -1))
 
