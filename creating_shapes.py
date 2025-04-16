@@ -1,6 +1,6 @@
 import pygame
 import sys
-from pygame.locals import * # type: ignore
+from pygame.locals import QUIT
 
 # Initialize program
 pygame.init()
